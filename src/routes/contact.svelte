@@ -1,9 +1,9 @@
 <script>
   import Icon from "@iconify/svelte";
-  import mailIcon from "@iconify/icons-bytesize/mail";
-  import phoneIcon from "@iconify/icons-bi/phone";
-  import githubOutlineFill from "@iconify/icons-akar-icons/github-outline-fill";
-  import linkedinOutlined from "@iconify/icons-ant-design/linkedin-outlined";
+  import mailIcon from "@iconify/icons-bytesize/mail.js";
+  import phoneIcon from "@iconify/icons-bi/phone.js";
+  import githubOutlineFill from "@iconify/icons-akar-icons/github-outline-fill.js";
+  import linkedinOutlined from "@iconify/icons-ant-design/linkedin-outlined.js";
 </script>
 
 <main>
