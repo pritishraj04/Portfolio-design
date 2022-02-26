@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-figma",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "package": "svelte-kit package",
+    "preview": "svelte-kit preview"
+  },
+  "devDependencies": {
+    "@iconify/icons-akar-icons": "^1.2.2",
+    "@iconify/icons-ant-design": "^1.2.1",
+    "@iconify/icons-bi": "^1.2.2",
+    "@iconify/icons-bytesize": "^1.2.1",
+    "@iconify/svelte": "^2.1.2",
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "sass": "^1.46.0",
+    "svelte": "^3.44.0",
+    "svelte-preprocess": "^4.10.1"
+  },
+  "type": "module"
+}

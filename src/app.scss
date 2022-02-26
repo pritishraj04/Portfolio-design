@@ -1,0 +1,43 @@
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+
+*,
+*::before,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--clr-primary-bg);
+  font-family: "Poppins", sans-serif;
+  color: var(--clr-primary-text);
+}
+a {
+  text-decoration: none;
+  color: var(--clr-primary-link-hvr);
+  &:hover {
+    color: var(--clr-primary-text);
+  }
+}
+ul {
+  list-style: none;
+}
+.accent {
+  color: var(--clr-primary-acc);
+}
+.italic {
+  font-style: italic;
+}
+main {
+  margin-inline: auto;
+  max-width: 75%;
+  margin-bottom: 5rem;
+  @media only screen and (max-width: 425px) {
+    max-width: 93%;
+  }
+  @media only screen and (max-width: 1440px) {
+    max-width: 85%;
+  }
+}
