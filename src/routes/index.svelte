@@ -9,7 +9,7 @@
 
 <svelte:window bind:innerHeight={y} />
 
-<main style="margin-top: max({y / 2 - 214}px, 140px);">
+<main style="margin-top: max({y / 2 - 214}px, 140px);" id="main">
   <h2>
     Hello. I am <span class="accent">Pritish Raj</span>.<br />
     <span class="accent">Software Engineer</span> form

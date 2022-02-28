@@ -16,7 +16,7 @@
   console.log(error);
 </script>
 
-<main>
+<main id="main">
   <h1>{status}</h1>
   <h4>{`${error.name} : ${error.message}`}</h4>
   <p>{error.stack}</p>

@@ -9,6 +9,7 @@
   <div class="logo">
     <a href="/">Pritish</a>
   </div>
+  <a class="skip-to-content-link" href="#main"> Skip to content </a>
   <nav>
     <ul>
       <li>
@@ -37,6 +38,19 @@
 </header>
 
 <style lang="scss">
+  .skip-to-content-link {
+    background: var(--clr-secondary-bg);
+    height: 30px;
+    left: 50%;
+    padding: 8px;
+    position: absolute;
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+  }
+
+  .skip-to-content-link:focus {
+    transform: translateY(0%);
+  }
   header {
     display: flex;
     justify-content: space-between;

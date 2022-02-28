@@ -2,7 +2,7 @@
   <title>Pritish | About</title>
 </svelte:head>
 
-<main>
+<main id="main">
   <h1>A Bit About Me</h1>
   <p class="desc">
     Currently, I'm a QA Tester working on the enhancing user experince at Babel

@@ -68,7 +68,7 @@
   <title>Pritish | Work</title>
 </svelte:head>
 
-<main>
+<main id="main">
   <h1>Things I've worked on</h1>
   <h3>
     Filter by: {#if filter.techFilter.length === 0 && filter.categoryFilter.length === 0}

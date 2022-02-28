@@ -12,7 +12,7 @@
 </svelte:head>
 
 <Header />
-<main>
+<main id="main">
   <h1>Get in touch with me</h1>
   <p class="info">Average response time: 48 Hrs.</p>
   <section class="contact">
