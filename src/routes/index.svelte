@@ -9,7 +9,7 @@
 
 <svelte:window bind:innerHeight={y} />
 
-<main style="margin-top: max({y / 2 - 214}px, 170px);">
+<main style="margin-top: max({y / 2 - 214}px, 140px);">
   <h2>
     Hello. I am <span class="accent">Pritish Raj</span>.<br />
     <span class="accent">Software Engineer</span> form
@@ -32,10 +32,10 @@
     /* transform: translateY(-50%); */
     h2 {
       font-weight: 700;
-      font-size: clamp(1rem, 3.4vw, 4.25rem);
+      font-size: clamp(1.5rem, 2.4vw, 4.125rem);
     }
     p {
-      font-size: clamp(0.5rem, 1.6vw, 2.125rem);
+      font-size: clamp(0.5rem, 1.2vw, 2.125rem);
     }
   }
   .pc {

@@ -64,6 +64,10 @@
   };
 </script>
 
+<svelte:head>
+  <title>Pritish | Work</title>
+</svelte:head>
+
 <main>
   <h1>Things I've worked on</h1>
   <h3>
@@ -165,9 +169,11 @@
         min-width: 6.25rem;
         transition: transform 0.3s ease;
         border: 1px var(--clr-secondary-bg) solid;
-        &:hover {
-          background: var(--clr-primary-bg);
-          transform: scale(1.1);
+        @media only screen and (min-width: 769px) {
+          &:hover {
+            background: var(--clr-primary-bg);
+            transform: scale(1.1);
+          }
         }
         img {
           width: 100%;

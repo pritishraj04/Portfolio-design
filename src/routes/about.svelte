@@ -1,3 +1,7 @@
+<svelte:head>
+  <title>Pritish | About</title>
+</svelte:head>
+
 <main>
   <h1>A Bit About Me</h1>
   <p class="desc">
