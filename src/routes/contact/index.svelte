@@ -3,7 +3,14 @@
   action="/contact/success"
   method="POST"
   data-netlify="true"
+  data-netlify-honeypot="bot-field"
 >
+  <input type="hidden" name="form-name" value="contact" />
+  <p hidden>
+    <label>
+      Don't fill this out: <input name="bot-field" />
+    </label>
+  </p>
   <div class="form-group">
     <label for="name"> Name </label>
     <input
