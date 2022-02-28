@@ -21,6 +21,15 @@ a {
     color: var(--clr-primary-text);
   }
 }
+button {
+  border: none;
+  color: var(--clr-primary-link-hvr);
+  background: var(--clr-secondary-bg);
+  padding: 0.5rem;
+  &:hover {
+    color: var(--clr-primary-text);
+  }
+}
 ul {
   list-style: none;
 }
