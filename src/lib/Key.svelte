@@ -1,17 +1,27 @@
 <script>
   export let char;
+
   let isPressed = false;
+
+  const keyPress = () => {
+    isPressed = true;
+    setTimeout(() => {
+      isPressed = false;
+    }, 200);
+  };
+
   function handleWindowKeyDown(event) {
     if (event.key === char) {
-      isPressed = true;
-      setTimeout(() => (isPressed = false), 200);
+      keyPress();
     }
   }
 </script>
 
 <svelte:window on:keydown={handleWindowKeyDown} />
 
-<span style={isPressed ? "transform: scale(0.9)" : "transform: scale(1)"}
+<span
+  on:mousedown={() => keyPress()}
+  style={isPressed ? "transform: scale(0.9)" : "transform: scale(1)"}
   ><i>{char}</i></span
 >
 
@@ -53,6 +63,12 @@
       color: #fff;
       font-style: normal;
       text-transform: uppercase;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
     }
   }
 </style>

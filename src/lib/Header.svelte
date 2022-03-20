@@ -109,13 +109,13 @@
       width: 90%;
       text-align: center;
       z-index: 99;
-      @supports (backdrop-filter: blur(10px)) {
+      /* @supports (backdrop-filter: blur(10px)) {
         @include bg-blur-light;
         &:hover {
           color: var(--clr-primary-bg);
           background: var(--clr-primary-comp);
         }
-      }
+      } */
       &::before {
         content: "";
         position: absolute;

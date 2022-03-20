@@ -83,6 +83,7 @@
       }
       textarea {
         max-width: 100%;
+        resize: vertical;
       }
       select {
         background: hsla(0, 0%, 100%, 0.39);
