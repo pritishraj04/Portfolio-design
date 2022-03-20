@@ -1,5 +1,8 @@
 <script>
-  import PC from "$lib/PC.svelte";
+  // import PC from "$lib/PC.svelte";
+
+  import Key from "$lib/Key.svelte";
+
   let y;
 </script>
 
@@ -12,7 +15,7 @@
 <main style="margin-top: max({y / 2 - 214}px, 140px);" id="main">
   <h2>
     Hello. I am <span class="accent">Pritish Raj</span>.<br />
-    <span class="accent">Software Engineer</span> form
+    <span class="accent">Software Engineer</span> from
     <span class="accent">New Delhi</span>.
   </h2>
   <p>
@@ -22,7 +25,10 @@
   </p>
 </main>
 <div class="pc" style="top: max({y / 2 - 214}px, 170px);">
-  <PC />
+  <Key char="w" />
+  <Key char="a" />
+  <Key char="s" />
+  <Key char="d" />
 </div>
 
 <style lang="scss">
@@ -40,10 +46,15 @@
   }
   .pc {
     position: absolute;
-    right: 0rem;
-    width: clamp(8rem, 23vw, 27rem);
+    right: 0;
+    padding: 2rem;
+    padding-right: 1rem;
     overflow: hidden;
-    @media only screen and (max-width: 540px) {
+    z-index: -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    @media only screen and (max-width: 770px) {
       filter: blur(5px);
     }
   }

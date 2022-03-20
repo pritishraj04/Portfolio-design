@@ -7,7 +7,7 @@
 
 <header>
   <div class="logo">
-    <a href="/">Pritish</a>
+    <a href="/">PR</a>
   </div>
   <a class="skip-to-content-link" href="#main"> Skip to content </a>
   <nav>
@@ -44,7 +44,7 @@
     left: 50%;
     padding: 8px;
     position: absolute;
-    transform: translateY(-100%);
+    transform: translateY(-120%);
     transition: transform 0.3s;
   }
 
@@ -109,6 +109,13 @@
       width: 90%;
       text-align: center;
       z-index: 99;
+      @supports (backdrop-filter: blur(10px)) {
+        @include bg-blur-light;
+        &:hover {
+          color: var(--clr-primary-bg);
+          background: var(--clr-primary-comp);
+        }
+      }
       &::before {
         content: "";
         position: absolute;

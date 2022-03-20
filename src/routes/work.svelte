@@ -70,6 +70,12 @@
 
 <main id="main">
   <h1>Things I've worked on</h1>
+  <p class="desc">
+    Here are some of the the projects i've made using some very interesting
+    techonologies. Apart from these listed projects i've also worked on multiple
+    projects as a QA Engineer with as big as 40 members team. I've also managed
+    group of 5-8 members in my team as a POC.
+  </p>
   <h3>
     Filter by: {#if filter.techFilter.length === 0 && filter.categoryFilter.length === 0}
       All
@@ -124,6 +130,12 @@
       </h2>
     {/each}
   </section>
+  <div class="info">
+    DISCLAIMER: Supabase and MongoDB servises might get paused due to it's
+    reserving resources policy for community users. Please feel free to
+    <a href="/contact">contact me</a> if the some system in my projects are not working
+    for you.
+  </div>
 </main>
 
 <style lang="scss">
@@ -132,6 +144,10 @@
     h1 {
       font-weight: 400;
       font-size: clamp(1.6rem, 2.2vw, 3.125rem);
+      margin-bottom: 0.5rem;
+    }
+    .desc {
+      font-size: clamp(0.8rem, 1.2vw, 1.925rem);
       margin-bottom: 2rem;
     }
     h3 {
@@ -239,6 +255,10 @@
           }
         }
       }
+    }
+    .info {
+      font-size: clamp(0.6rem, 1vw, 1.5rem);
+      margin-block: 1rem;
     }
   }
 </style>

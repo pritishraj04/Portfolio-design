@@ -15,7 +15,7 @@ const works = [
     tech: ["Sveltekit", "CSS", "Supabase"],
     img: "lgini.webp",
     link: "https://mystifying-goodall-ca2cf8.netlify.app/",
-    desc: "Full Stack project Laundry App made using Sveltekit, CSS as frontend & supabase as backend. This project focuses on quick login/register system integration. This project also features odering and account system. DISCLAIMER: Supabase servises might get paused due to it's reserving resources policy for community users. Please feel free to contact me if the login/register system is not working for you.",
+    desc: "Full Stack project Laundry App made using Sveltekit, CSS as frontend & supabase as backend. This project focuses on quick login/register system integration. This project also features odering and account system.",
   },
   {
     id: 3,
