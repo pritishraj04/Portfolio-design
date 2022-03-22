@@ -1,5 +1,8 @@
 <script>
   import works from "$lib/works";
+  import { fly } from "svelte/transition";
+  let allCategoryFilters = [...new Set(works.map((el) => el.category))];
+  let allTechFilters = [...new Set(works.map((el) => el.tech).flat(1))];
   let filter = { techFilter: [], categoryFilter: [] };
   let filteredList = works;
 
@@ -30,12 +33,14 @@
       case "category":
         if (!filter.categoryFilter.includes(fil)) {
           filter.categoryFilter = [...filter.categoryFilter, fil];
+          allCategoryFilters = allCategoryFilters.filter((el) => el !== fil);
           refreshList("category");
         }
         break;
       case "tech":
         if (!filter.techFilter.includes(fil)) {
           filter.techFilter = [...filter.techFilter, fil];
+          allTechFilters = allTechFilters.filter((el) => el !== fil);
           refreshList("tech");
         }
         break;
@@ -50,6 +55,7 @@
             refreshList("category");
           }
         }
+        allCategoryFilters = [...allCategoryFilters, fil];
         break;
       case "tech":
         for (let i = 0; i < filter.techFilter.length; i++) {
@@ -58,6 +64,7 @@
             refreshList("tech");
           }
         }
+        allTechFilters = [...allTechFilters, fil];
         break;
     }
     filter = filter;
@@ -76,18 +83,41 @@
     projects as a QA Engineer with as big as 40 members team. I've also managed
     group of 5-8 members in my team as a POC.
   </p>
+  <h3 class="heading">Filters</h3>
+  {#if allTechFilters.length > 0 || allCategoryFilters.length > 0}
+    <div class="filters">
+      {#each allTechFilters as tech}
+        <button
+          in:fly
+          class="tech"
+          on:click={() => addFilter("tech", tech)}
+          title={`Filter by ${tech}`}>{tech}</button
+        >
+      {/each}
+      {#each allCategoryFilters as category}
+        <button
+          in:fly
+          on:click={() => addFilter("category", category)}
+          class="category"
+          title={`Filter by ${category}`}>{category}</button
+        >
+      {/each}
+    </div>
+  {/if}
   <h3>
-    Filter by: {#if filter.techFilter.length === 0 && filter.categoryFilter.length === 0}
-      All
+    Applied filters: {#if filter.techFilter.length === 0 && filter.categoryFilter.length === 0}
+      None
     {:else}
       {#each filter.techFilter as item}
-        <button class="tech" on:click={() => removeFilter("tech", item)}
+        <button class="tech" in:fly on:click={() => removeFilter("tech", item)}
           >{item}</button
         >
       {/each}
       {#each filter.categoryFilter as item}
-        <button class="category" on:click={() => removeFilter("category", item)}
-          >{item}</button
+        <button
+          class="category"
+          in:fly
+          on:click={() => removeFilter("category", item)}>{item}</button
         >
       {/each}
     {/if}
@@ -95,26 +125,12 @@
   <section class="works">
     {#each filteredList as work}
       <div class="work-card">
-        <div class="techs">
-          {#each work.tech as tech}
-            <button
-              class="tech"
-              on:click={() => addFilter("tech", tech)}
-              title={`Filter by ${tech}`}>{tech}</button
-            >
-          {/each}
-        </div>
         <a href={work.link} target="_blank" rel="noopener noreferrer">
           <img src={`/asset/works/${work.img}`} alt={work.title} /></a
         >
         <div class="desc">
           <a href={work.link} target="_blank" rel="noopener noreferrer">
             <h4>{work.title}</h4></a
-          >
-          <button
-            on:click={() => addFilter("category", work.category)}
-            class="category"
-            title={`Filter by ${work.category}`}>{work.category}</button
           >
           <a href={work.link} target="_blank" rel="noopener noreferrer">
             <p>
@@ -150,26 +166,85 @@
       font-size: clamp(0.8rem, 1.2vw, 1.925rem);
       margin-bottom: 2rem;
     }
-    h3 {
-      font-size: clamp(1rem, 1.6vw, 2.725rem);
-      font-weight: 600;
-      margin-bottom: 1rem;
+    .filters {
+      padding: 0.3rem 0.2rem;
+      @include bg-blur-light;
+      overflow-x: auto;
+      white-space: nowrap;
       button.tech {
         margin: 0.2rem;
-        padding: 0.2rem;
+        padding: 0.25rem 0.3rem;
         border-radius: 0.5rem;
         font-weight: 600;
+        &::after {
+          content: "+";
+          padding-inline: 0.2rem 0.4rem;
+          background: var(--clr-primary-bg);
+          border-top-right-radius: 0.3rem;
+          border-bottom-right-radius: 0.3rem;
+          margin-inline: 0.6rem 0.1rem;
+        }
       }
       button.category {
         margin: 0.2rem;
-        padding: 0.2rem;
+        padding: 0.25rem 0.3rem;
         border-radius: 0.5rem;
         font-weight: 600;
         background: var(--clr-primary-bg);
         border: 2px var(--clr-primary-text) solid;
         text-transform: capitalize;
+        &::after {
+          content: "+";
+          padding-inline: 0.2rem 0.4rem;
+          background: var(--clr-primary-link-hvr);
+          color: var(--clr-primary-bg);
+          border-top-right-radius: 0.3rem;
+          border-bottom-right-radius: 0.3rem;
+          margin-inline: 0.6rem 0.1rem;
+        }
       }
     }
+    h3 {
+      font-size: clamp(1rem, 1.6vw, 2.725rem);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      &.heading {
+        margin-bottom: 0;
+      }
+      button.tech {
+        margin: 0.2rem;
+        padding: 0.25rem 0.3rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        &::after {
+          content: "×";
+          padding-inline: 0.2rem 0.4rem;
+          background: var(--clr-primary-bg);
+          border-top-right-radius: 0.3rem;
+          border-bottom-right-radius: 0.3rem;
+          margin-inline: 0.6rem 0.1rem;
+        }
+      }
+      button.category {
+        margin: 0.2rem;
+        padding: 0.25rem 0.3rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        background: var(--clr-primary-bg);
+        border: 2px var(--clr-primary-text) solid;
+        text-transform: capitalize;
+        &::after {
+          content: "×";
+          padding-inline: 0.2rem 0.4rem;
+          background: var(--clr-primary-link-hvr);
+          color: var(--clr-primary-bg);
+          border-top-right-radius: 0.3rem;
+          border-bottom-right-radius: 0.3rem;
+          margin-inline: 0.6rem 0.1rem;
+        }
+      }
+    }
+
     .works {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -219,7 +294,7 @@
             opacity: 0.7;
           }
         }
-        .techs {
+        /* .techs {
           position: absolute;
           max-height: 60%;
           @media only screen and (max-width: 768px) {
@@ -253,7 +328,7 @@
               display: block;
             }
           }
-        }
+        } */
       }
     }
     .info {

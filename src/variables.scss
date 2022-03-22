@@ -7,7 +7,8 @@
   --clr-primary-text: #e3e3e3;
   --clr-primary-comp: #f27d10;
   --clr-primary-acc: #ffafae;
-  --clr-lightblur-bg: hsla(189, 70%, 9%, 0.35);
+  --clr-lightblur-bg: hsla(190, 15%, 76%, 0.35);
+  --clr-darkblur-bg: hsla(189, 70%, 9%, 0.35);
 }
 @mixin bg-blur-light {
   background: var(--clr-lightblur-bg);
