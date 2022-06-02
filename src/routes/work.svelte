@@ -126,7 +126,12 @@
     {#each filteredList as work}
       <div class="work-card">
         <a href={work.link} target="_blank" rel="noopener noreferrer">
-          <img src={`/asset/works/${work.img}`} alt={work.title} /></a
+          <img
+            src={work.img
+              ? `/asset/works/${work.img}`
+              : `/asset/works/placeholder.png`}
+            alt={work.title}
+          /></a
         >
         <div class="desc">
           <a href={work.link} target="_blank" rel="noopener noreferrer">

@@ -12,7 +12,7 @@ const works = [
     id: 2,
     title: "Laundry App",
     category: "fullstack",
-    tech: ["Sveltekit", "CSS", "Supabase"],
+    tech: ["Sveltekit", "Supabase"],
     img: "lgini.webp",
     link: "https://mystifying-goodall-ca2cf8.netlify.app/",
     desc: "Full Stack project Laundry App made using Sveltekit, CSS as frontend & supabase as backend. This project focuses on quick login/register system integration. This project also features odering and account system.",

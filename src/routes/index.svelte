@@ -1,6 +1,6 @@
 <script>
   // import PC from "$lib/PC.svelte";
-
+  import Hero from "$lib/Hero.svelte";
   import Key from "$lib/Key.svelte";
 
   let y;
@@ -13,16 +13,7 @@
 <svelte:window bind:innerHeight={y} />
 
 <main style="margin-top: max({y / 2 - 214}px, 140px);" id="main">
-  <h2>
-    Hello. I am <span class="accent">Pritish Raj</span>.<br />
-    <span class="accent">Software Engineer</span> from
-    <span class="accent">New Delhi</span>.
-  </h2>
-  <p>
-    Right now I'm looking for new opportunites. <br /> Currently working at
-    <span class="italic">Babel Media Pvt. Ltd.</span>
-    as <span class="italic">QA Tester</span>.
-  </p>
+  <Hero />
 </main>
 <div class="pc" style="top: max({y / 2 - 214}px, 170px);">
   <Key char="w" />
@@ -34,18 +25,11 @@
 <p class="footer-text">Designed and Developed by Pritish Raj</p>
 
 <style lang="scss">
-  main {
-    /* min-height: calc(100vh - 5rem); */
-    /* margin-block: max(10rem, 18%) 0; */
-    /* transform: translateY(-50%); */
-    h2 {
-      font-weight: 700;
-      font-size: clamp(1.5rem, 2.4vw, 4.125rem);
-    }
-    p {
-      font-size: clamp(0.5rem, 1.2vw, 2.125rem);
-    }
-  }
+  /* main {
+    min-height: calc(100vh - 5rem);
+    margin-block: max(10rem, 18%) 0;
+    transform: translateY(-50%);
+  } */
   .pc {
     position: absolute;
     right: 0;
