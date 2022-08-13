@@ -5,22 +5,48 @@
 <main id="main">
   <h1>A Bit About Me</h1>
   <p class="desc">
-    Currently, I'm a QA Tester working on the enhancing user experince at Babel
-    Media. Previously, I did frontend web development to build delightful UI &
-    UX for emerging companies. I was a freelance web and brand designer, and
-    worked with Polardot.in to help multiple companies to build their digital
-    footprint. I was also an intern at Tech4i. <br /><br /> Want to work
-    together?
+    Currently, I'm a Test engineer working on perfecting user interface and
+    enhancing user experince at <a
+      href="https://creatiosoft.com/"
+      target="_blank"
+      class="creatiosoft_link"
+      rel="noopener noreferrer">Creatiosoft Pvt. Ltd.</a
+    >. Prior to this role i was assigned a role of FQA Tester at
+    <a
+      href="https://www.babelmedia.com/"
+      class="babel_link"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Babel Media Pvt. Ltd.</a
+    >. In this role i have worked on multiple projects including AAA games. I
+    also have worked in Agile work environment. I am well versed in different
+    testing techniques and tools. <br />
+    Previously, I have done web development to build enhanced UI & UX for emerging
+    companies. I was a freelance web and brand designer and developer, and worked
+    with
+    <a
+      href="http://www.polardot.in"
+      class="polardot_link"
+      target="_blank"
+      rel="noopener noreferrer">Polardot.in</a
+    >
+    to help multiple companies to build their digital footprint. I was also an intern
+    at Tech4i Pvt. Ltd.. <br /><br /> Want to work together?
     <a href="/contact">Contact me</a>.
   </p>
   <h2>History</h2>
   <ul>
     <li>
-      <p>QA Tester - Babel Media Pvt. Ltd. (A Keywords Studios)</p>
-      <p>Sep 2019 - Currently Working Here</p>
+      <p>Test Engineer - Creatiosoft Pvt. Ltd., Noida</p>
+      <p>May 2022 - Currently Working Here</p>
     </li>
     <li>
-      <p>Intern - Tech4i Pvt. Ltd.</p>
+      <p>QA Tester - Babel Media Pvt. Ltd. (A Keywords Studios), Gurugram</p>
+      <p>Sep 2019 - May 2022</p>
+    </li>
+    <li>
+      <p>Intern - Tech4i Pvt. Ltd., New Delhi</p>
       <p>May 2018 - Jun 2018</p>
     </li>
   </ul>
@@ -31,11 +57,11 @@
       <p>Mar 2015 - May 2019</p>
     </li>
     <li>
-      <p>Intermediate - Dr. D. RAM D.A.V. Public School</p>
+      <p>Intermediate - D.A.V. Public School</p>
       <p>2015</p>
     </li>
     <li>
-      <p>Matriculation - Dr. D. RAM D.A.V. Public School</p>
+      <p>Matriculation - D.A.V. Public School</p>
       <p>2012</p>
     </li>
   </ul>
@@ -62,6 +88,15 @@
       margin-bottom: 1.5rem;
       @media only screen and (max-width: 720px) {
         max-width: unset;
+      }
+      .polardot_link {
+        color: var(--clr-primary-polardot);
+      }
+      .creatiosoft_link {
+        color: var(--clr-primary-creatiosoft);
+      }
+      .babel_link {
+        color: var(--clr-primary-babel);
       }
     }
     ul {

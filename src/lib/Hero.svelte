@@ -1,13 +1,12 @@
 <script>
   import Typer from "$lib/Typer.svelte";
-  import { isShown } from "$lib/stores";
+  import { isShown, pVisible } from "$lib/stores";
   import { fly } from "svelte/transition";
   let br = false;
-  let pVisible = false;
 
   setTimeout(() => (br = true), 2400);
   setTimeout(() => {
-    pVisible = true;
+    $pVisible = true;
   }, 7000);
   setTimeout(() => {
     $isShown = true;
@@ -24,11 +23,6 @@
     <span class="accent">New Delhi.</span>
     <span class="blink" />
   </h2>
-  <p>
-    Right now I'm looking for new opportunites. <br /> Currently working at
-    <span class="italic">Babel Media Pvt. Ltd.</span>
-    as <span class="italic">QA Tester</span>.
-  </p>
 {:else}
   <h2>
     <Typer text="Hello. I am" />
@@ -42,13 +36,14 @@
     <span class="accent"><Typer text="New Delhi." waitTime="5.4" /></span>
     <span class="blink" />
   </h2>
-  {#if pVisible}
-    <p in:fly={{ y: 50, duration: 1000 }}>
-      Right now I'm looking for new opportunites. <br /> Currently working at
-      <span class="italic">Babel Media Pvt. Ltd.</span>
-      as <span class="italic">QA Tester</span>.
-    </p>
-  {/if}
+{/if}
+{#if $pVisible}
+  <p in:fly={{ y: 50, duration: 1000 }}>
+    Right now I'm looking for new opportunites in Test Automation and Web
+    development. <br /> Currently working at
+    <span class="italic">Creatiosoft Pvt. Ltd.</span>
+    as a <span class="italic">Test Engineer</span>.
+  </p>
 {/if}
 
 <style>

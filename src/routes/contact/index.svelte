@@ -34,10 +34,11 @@
   <div class="form-group">
     <label for="category"> Category </label>
     <select name="category" id="category">
-      <option value="bussines">Bussines</option>
       <option value="personal">Personal</option>
-      <option value="hiring">Hiring</option>
-      <option value="chat">Chat</option>
+      <option value="bussines">Talk bussines</option>
+      <option value="project">Related to Listed Projects</option>
+      <option value="hiring">Want to Hire</option>
+      <option value="chat">Friendly Chat</option>
     </select>
   </div>
   <div class="form-group">

@@ -16,9 +16,10 @@ body {
 }
 a {
   text-decoration: none;
+  transition: color 600ms;
   color: var(--clr-primary-link-hvr);
   &:hover {
-    color: var(--clr-primary-text);
+    color: var(--clr-primary-text) !important;
   }
 }
 button {
